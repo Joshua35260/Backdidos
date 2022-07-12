@@ -1,0 +1,71 @@
+
+id:
+name:
+age:
+prime:
+description:
+crimes: //OneLiner
+dead:// OUI - NON 
+alive: // OUI - NON 
+deadoralive: // OUI - NON 
+status: //Recherché (0) - capturé (1)
+image:
+voix:
+ville:
+latitude:
+longitude:
+rating:
+armes:
+// bandits.props
+
+
+CREATE TABLE bandits(
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `age` INT NULL,
+  `prime` INT NOT NULL,
+  `description` VARCHAR(255) NULL,
+  `crimes` VARCHAR(255) NOT NULL,
+  `dead` BOOL NOT NULL,
+  `alive` BOOL NOT NULL,
+  `deadoralive` BOOL NOT NULL,
+  `status` BOOL NOT NULL,
+  `image` VARCHAR(100) NOT NULL,
+  `voix` VARCHAR(100) NULL,
+  `ville` VARCHAR(100) NULL,
+  `latitude` FLOAT NULL,
+  `longitude` FLOAT NULL,
+  `rating` BOOL NOT NULL,
+  `armes` VARCHAR(100) NULL,	
+  PRIMARY KEY (`id`)
+);
+
+// INSERT INTO bandits (name, prime, age, prime, description, crimes, dead, alive, deadoralive, status, image, voix, ville, latitude, longitude, rating, armes ) 
+// VALUES ('Abdou', 36, 10000000, 'Sarazin', 'Bourrage de crane', false, false, true, true,'./assets/img/Abdou.png', null, 48.873571475472374, 2.346806195660744, true, "lasso, pistolet, eloquence, code");
+
+
+SELECT b.*, group_concat(DISTINCT a.name_arme SEPARATOR ', ') as armes FROM bandits as b
+JOIN bandits_has_armes as bha ON bha.bandits_idbandits = b.idbandits
+JOIN armes as a ON a.idarmes = bha.armes_idarmes;
+
+[
+  {
+      "idbandits": 1,
+      "name": "El Chicano",
+      "age": 36,
+      "prime": 10000000,
+      "description": "Sarazin",
+      "crimes": "Bourrage de crane",
+      "dead": 0,
+      "alive": 0,
+      "deadoralive": 1,
+      "status": 1,
+      "image": "../assets/img/Abdou.png",
+      "voix": null,
+      "ville": "Paris",
+      "latitude": 48.8736,
+      "longitude": 2.34681,
+      "rating": 1,
+      "armes": "carabine, coutelas, pistolet"
+  }
+]
