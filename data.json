@@ -40,7 +40,7 @@ CREATE TABLE bandits(
   PRIMARY KEY (`id`)
 );
 
-// INSERT INTO bandits (name, prime, age, prime, description, crimes, dead, alive, deadoralive, status, image, voix, ville, latitude, longitude, rating, armes ) 
+// INSERT INTO bandits (name, surname, prime, age, prime, description, crimes, dead, alive, deadoralive, status, image, voix, ville, latitude, longitude, rating, armes ) 
 // VALUES ('Abdou', 36, 10000000, 'Sarazin', 'Bourrage de crane', false, false, true, true,'./assets/img/Abdou.png', null, 48.873571475472374, 2.346806195660744, true, "lasso, pistolet, eloquence, code");
 
 
@@ -51,7 +51,8 @@ JOIN armes as a ON a.idarmes = bha.armes_idarmes;
 [
   {
       "idbandits": 1,
-      "name": "El Chicano",
+      "name": "Abdou",
+      "surname": "El Chicano",
       "age": 36,
       "prime": 10000000,
       "description": "Sarazin",
@@ -69,3 +70,23 @@ JOIN armes as a ON a.idarmes = bha.armes_idarmes;
       "armes": "carabine, coutelas, pistolet"
   }
 ]
+
+{
+      "name": "Jonas, Joshua, Jonathan",
+      "surname": "Los tres Jo's",
+      "age": 95,
+      "prime": 999999999999,
+      "description": "Gringo, ils sont toujours 3!",
+      "crimes": "Braquage du back",
+      "dead": 0,
+      "alive": 0,
+      "deadoralive": 1,
+      "status": 0,
+      "image": "../assets/img/MONTAGE",
+      "voix": null,
+      "ville": "",
+      "latitude": 79.37531043514852,
+      "longitude":  -46.107871369141655,
+      "rating": 1,
+      
+  },
